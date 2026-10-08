@@ -7,28 +7,28 @@ public class StudiKasus226 {
         String juaraHarapan, peserta;
         String peringkatJuara;
         String statusPendanaanPKM;
-        int namaMahasiswa;
+        String namaMahasiswa;
         int jmlDokumen;
 
         System.out.println("Masukkan nama mahasiwa");
-        namaMahasiswa = sc.nextInt();
-        System.out.println("Pilih jenis kegiatan");
+        namaMahasiswa = sc.nextLine();
+        System.out.println("Masukkan jenis kegiatan");
         jenisKegiatan = sc.nextLine();
         System.out.println("Masukkan jumlah dokumen yang diupload");
         jmlDokumen = sc.nextInt();
         System.out.println("Masukkan peringkat juara");
         peringkatJuara = sc.nextLine();
-        System.out.println("Apakah anda lolos pendanaan");
-        statusPendanaanPKM = sc.nextLine();
 
         if (jenisKegiatan.equalsIgnoreCase ("BELMAWA") || jenisKegiatan.equalsIgnoreCase("BAKORMA") || jenisKegiatan.equalsIgnoreCase("Mandiri")) {
+            peringkatJuara = sc.nextLine();
             if (peringkatJuara.equalsIgnoreCase ("1") || peringkatJuara.equalsIgnoreCase  ("2") || peringkatJuara.equalsIgnoreCase ("3")) {
                  System.out.println("Selamat! anda mendapatkan dana penghargaan");  
             } else {
                 System.out.println("Juara harapan / peserta tidak memperoleh dana pernghargaan");
             }       
         } else if (jenisKegiatan.equalsIgnoreCase("pkm")) {
-            if (statusPendanaanPKM.equalsIgnoreCase("Lolos pendanaan")) {
+            statusPendanaanPKM = sc.nextLine();
+            if (statusPendanaanPKM.equalsIgnoreCase("1")) {
                 System.out.println("Selamat! Anda mendapatkan dana penghargaan");
             } else {
                 if (jenisKegiatan.equalsIgnoreCase("Lainnya")) {
