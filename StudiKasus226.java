@@ -24,15 +24,27 @@ public class StudiKasus226 {
         if (jenisKegiatan.equalsIgnoreCase ("BELMAWA") || jenisKegiatan.equalsIgnoreCase("BAKORMA") || jenisKegiatan.equalsIgnoreCase("Mandiri")) {
             if (peringkatJuara.equalsIgnoreCase ("1") || peringkatJuara.equalsIgnoreCase  ("2") || peringkatJuara.equalsIgnoreCase ("3")) {
                  System.out.println("Selamat! anda mendapatkan dana penghargaan");  
-        } else {
-            System.out.println("Juara harapan / peserta tidak memperoleh dana pernghargaan");
-        }       
-        if (statusPendanaanPKM.equalsIgnoreCase ("Lolos pendanaan")) {
-            System.out.println("Dana penghargaan diberikan");
-        } else if (jenisKegiatan.equalsIgnoreCase ("Lainnya")){
-            System.out.println("Tidak memperoleh dana penghargaan");
-        }
-        if ()
+            } else {
+                System.out.println("Juara harapan / peserta tidak memperoleh dana pernghargaan");
+            }       
+        } else if (jenisKegiatan.equalsIgnoreCase("pkm")) {
+            if (statusPendanaanPKM.equalsIgnoreCase("Lolos pendanaan")) {
+                System.out.println("Selamat! Anda mendapatkan dana penghargaan");
+            } else {
+                if (jenisKegiatan.equalsIgnoreCase("Lainnya")) {
+                    System.out.println("Mohon maaf anda tidak memperoleh dana penghargaan");
+                }
             }
         }
+        if (jmlDokumen == 4) {
+            System.out.println("Dokumen anda lengkap dan anda mendapatkan dana penghargaan");
+        } else if(jmlDokumen < 4 ) {
+            System.out.println("Tidak lengkap dan dana penghargaan tidak diberikan");
+        }
+        if (peringkatJuara.equalsIgnoreCase ("1") || peringkatJuara.equalsIgnoreCase("2") || peringkatJuara.equalsIgnoreCase("3") && jmlDokumen == 4) {
+            System.out.println("Dokumen lengkap dan anda mendapatkan dana penghargaan");
+        } else {
+            System.out.println("Data tidak lengkap, anda tidak mendapatkan dana penghargaan");
+        }
     }
+}
